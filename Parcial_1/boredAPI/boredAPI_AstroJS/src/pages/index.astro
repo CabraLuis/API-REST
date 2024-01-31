@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Frame from "../components/Frame";
+---
+
+<Layout title="Bored API">
+  <header>
+    <div class="navbar bg-primary text-primary-content">
+      <a href="http://www.boredapi.com/" class="btn btn-ghost text-xl"
+        >BoredAPI 😴</a
+      >
+    </div>
+  </header>
+  <body>
+    <Frame client:visible />
+  </body>
+</Layout>
