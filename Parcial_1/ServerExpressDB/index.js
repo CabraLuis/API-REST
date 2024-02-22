@@ -10,7 +10,7 @@ const connection = mysql.createPool({
 
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 
 app.get("/juego", (req, res) => {
   let myQuery = `SELECT * FROM juegos`;
@@ -36,7 +36,7 @@ app.delete("/juego", (req, res) => {
     connection.query(myQuery, function (err, results, fields) {
       results.length == 0
         ? res.status(404).json({ error: "Juego no encontrado" })
-        : res.send(results);
+        : res.send(results.info);
     });
   } catch (err) {
     res.send(err.code + " / " + err.message);
@@ -51,7 +51,7 @@ app.post("/juego", (req, res) => {
     connection.query(myQuery, function (err, results, fields) {
       results.length == 0
         ? res.status(404).json({ error: "No se pudo insertar" })
-        : res.send(results);
+        : res.send(results.info);
     });
   } catch (err) {
     res.send(err.code + " / " + err.message);
@@ -60,13 +60,13 @@ app.post("/juego", (req, res) => {
 
 app.patch("/juego", (req, res) => {
   let data = req.body;
-  let myQuery = `UPDATE juegos SET nombre = ${data.nombre} WHERE id = ${data.id}")`;
+  let myQuery = `UPDATE juegos SET nombre = "${data.nombre}" WHERE id = ${data.id}`;
 
   try {
     connection.query(myQuery, function (err, results, fields) {
       results.length == 0
         ? res.status(404).json({ error: "No se encontro el juego" })
-        : res.send(results);
+        : res.send(results.info);
     });
   } catch (err) {
     res.send(err.code + " / " + err.message);
