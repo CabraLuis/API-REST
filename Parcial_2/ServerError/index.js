@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   res.status(404).send("URL no definida");
 });
 
-app.use((err, res, next, req) => {
+app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message });
 });
 
