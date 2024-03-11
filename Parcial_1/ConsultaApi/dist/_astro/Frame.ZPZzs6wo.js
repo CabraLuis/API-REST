@@ -1,9 +1,0 @@
-import{r as c}from"./index.LFf77hJu.js";var o={exports:{}},n={};/**
- * @license React
- * react-jsx-runtime.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */var f=c,m=Symbol.for("react.element"),x=Symbol.for("react.fragment"),u=Object.prototype.hasOwnProperty,h=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,j={key:!0,ref:!0,__self:!0,__source:!0};function p(a,r,t){var s,i={},l=null,d=null;t!==void 0&&(l=""+t),r.key!==void 0&&(l=""+r.key),r.ref!==void 0&&(d=r.ref);for(s in r)u.call(r,s)&&!j.hasOwnProperty(s)&&(i[s]=r[s]);if(a&&a.defaultProps)for(s in r=a.defaultProps,r)i[s]===void 0&&(i[s]=r[s]);return{$$typeof:m,type:a,key:l,ref:d,props:i,_owner:h.current}}n.Fragment=x;n.jsx=p;n.jsxs=p;o.exports=n;var e=o.exports;function g(){const[a,r]=c.useState();return c.useEffect(()=>{(async()=>{const s=await fetch("https://ghibliapi.vercel.app/films/?limit=12");r(await s.json())})().catch(console.error)},[]),e.jsx("div",{className:"flex justify-center mt-4",children:e.jsx("div",{className:"grid grid-cols-4 gap-4",children:a?a.map(t=>e.jsx("div",{children:e.jsxs("div",{className:"card w-96 bg-base-300 shadow-xl",children:[e.jsx("figure",{children:e.jsx("img",{src:t.image,alt:"Movie Image"})}),e.jsxs("div",{className:"card-body",children:[e.jsxs("h2",{className:"card-title",children:[t.title,e.jsx("div",{className:"badge badge-primary",children:t.release_date})]}),e.jsx("p",{children:t.description}),e.jsx("div",{className:"card-actions justify-end",children:e.jsx("button",{className:"btn btn-primary",children:"Watch Now"})})]})]})},t.id)):e.jsx("span",{class:"loading loading-spinner text-primary loading-lg"})})})}export{g as default};
