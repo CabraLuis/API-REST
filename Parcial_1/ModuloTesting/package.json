@@ -1,0 +1,11 @@
+{
+  "name": "modulotesting",
+  "version": "1.0.1",
+  "description": "Prueba de modulo ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cabra Z",
+  "license": "ISC"
+}
