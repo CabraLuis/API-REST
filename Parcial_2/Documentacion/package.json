@@ -4,11 +4,17 @@
   "description": "Prueba de modulo ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc -c conf.json -R README.md"
   },
   "author": "Cabra Z",
   "license": "ISC",
   "dependencies": {
+    "clean-jsdoc-theme": "^4.2.17",
     "jsdoc": "^4.0.2"
+  },
+  "devDependencies": {
+    "better-docs": "^2.7.3",
+    "loke-jsdoc-theme": "^2.1.0"
   }
 }

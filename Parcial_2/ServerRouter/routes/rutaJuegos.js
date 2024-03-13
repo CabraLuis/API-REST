@@ -4,10 +4,18 @@ const rutaJuegos = express.Router();
 const db = require("better-sqlite3")("../../juegos.db");
 
 rutaJuegos.get("/", (req, res, next) => {
-  var query = "SELECT * FROM juego";
-  var id = parseInt(req.query.id);
-  const rows = db.prepare("SELECT * FROM juego").all();
-  res.json(rows);
+  res.send("Responde GET");
 });
 
+rutaJuegos.post("/", (req, res, next) => {
+  res.send("Responde POST");
+});
+
+rutaJuegos.patch("/", (req, res, next) => {
+  res.send("Responde PATCH");
+});
+
+rutaJuegos.delete("/", (req, res, next) => {
+  res.send("Responde DELETE");
+});
 module.exports = rutaJuegos;
