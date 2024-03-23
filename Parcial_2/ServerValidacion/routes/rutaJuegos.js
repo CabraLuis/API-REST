@@ -29,16 +29,14 @@ rutaJuegos.post(
   (req, res, next) => {
     const result = validationResult(req);
     if (result.isEmpty()) {
-      const query = db
-        .prepare(
-          `INSERT INTO juego (nombre, anio, desarrolladora, imagen) VALUES (?, ?, ?, ?)`
-        )
-        .run(
-          req.body.nombre,
-          req.body.anio,
-          req.body.desarrolladora,
-          req.body.imagen
-        );
+      db.prepare(
+        `INSERT INTO juego (nombre, anio, desarrolladora, imagen) VALUES (?, ?, ?, ?)`
+      ).run(
+        req.body.nombre,
+        req.body.anio,
+        req.body.desarrolladora,
+        req.body.imagen
+      );
 
       return res.status(200).send("Juego agregado exitosamente");
     }
