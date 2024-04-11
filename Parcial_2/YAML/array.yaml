@@ -1,0 +1,8 @@
+---
+materias:
+ - nombre: ABD
+   creditos: 4
+ - nombre: API
+   creditos: 4
+ - nombre: Conmutacion
+   creditos: 5
