@@ -1,15 +1,15 @@
 const { formidable } = require("formidable");
 const express = require("express");
 const rutaJuegos = express.Router();
-
-const db = require("better-sqlite3")("../../juegos.db");
+const fs = require('fs')
+const path= require('path')
 
 rutaJuegos.get("/", (req, res, next) => {
   res.send("Responde GET");
 });
 
 rutaJuegos.post("/upload", (req, res, next) => {
-  const form = formidable({ uploadDir: "upload/" });
+  const form = formidable({ uploadDir: path.join(__dirname,"/uploads")  });
 
   form.parse(req, (err, fields, files) => {
     if (err) {
