@@ -1,21 +1,21 @@
 {
-  "name": "serverexpress",
+  "name": "proyecto-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "better-sqlite3": "^9.4.3",
-    "chai": "4.4.1",
-    "chai-http": "^4.4.0",
-    "express": "^4.18.2",
-    "express-validator": "^7.0.1",
-    "mocha": "^10.4.0",
+    "@prisma/client": "^5.13.0",
+    "express": "^4.19.2",
+    "prisma": "^5.13.0",
     "swagger-jsdoc": "^6.2.8",
+    "swagger-themes": "^1.4.3",
     "swagger-ui-express": "^5.0.0"
-  }
+  },
+  "type": "module"
 }
